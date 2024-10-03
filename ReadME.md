@@ -73,11 +73,12 @@ This is a simple "Cow Herd" game built using Python. The game is available in tw
 -Kangwagye Jonas - 2024BCS194@std.must.ac.ug
 
 -Maro Edly - 2024BCS097@std.must.ac.ug 
+
 -Nanjuki Daphine - 2024BCS129@std.must.ac.ug
 
 -Rwendeire Joshua Truth - 2024BCS148@std.must.ac.ug
 
- -Amon Muhwezi - 2024BCS109@std.must.ac.ug
+-Amon Muhwezi - 2024BCS109@std.must.ac.ug
 
 -Katusiime Moreen -2024bcs084@std.must.ac.ug 
 
