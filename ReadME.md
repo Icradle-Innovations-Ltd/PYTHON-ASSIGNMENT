@@ -58,17 +58,17 @@ python cow_herd_game_console.py
 This is a simple "Cow Herd" game built using Python. The game is available in two versions: a graphical user interface (GUI) version and a console version. The objective of the game is to remove all cows from the herds before the computer does.
 
 ## Authors
-
-- Amon Muhwezi
-- 2024BCS109PS
 - Group name: Bazaar
+
+-Amon Muhwezi - 2024BCS109@std.must.ac.ug
+
 -Amanya Peter - 2024bcs033@std.must.ac.ug
 
 -Doreen miracle - 2024bcs130@std.must.ac.ug
 
 -Twinomugisha Nickson - 2024bcs168@std.must.ac.ug
 
-- Asiimwe Shabellah - 2024BCS049@std.must.ac.ug
+-Asiimwe Shabellah - 2024BCS049@std.must.ac.ug
 
 -Kangwagye Jonas - 2024BCS194@std.must.ac.ug
 
@@ -77,8 +77,6 @@ This is a simple "Cow Herd" game built using Python. The game is available in tw
 -Nanjuki Daphine - 2024BCS129@std.must.ac.ug
 
 -Rwendeire Joshua Truth - 2024BCS148@std.must.ac.ug
-
--Amon Muhwezi - 2024BCS109@std.must.ac.ug
 
 -Katusiime Moreen -2024bcs084@std.must.ac.ug 
 
