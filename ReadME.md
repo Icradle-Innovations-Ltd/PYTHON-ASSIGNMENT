@@ -61,6 +61,25 @@ This is a simple "Cow Herd" game built using Python. The game is available in tw
 
 - Amon Muhwezi
 - 2024BCS109PS
+- Group name: Bazaar
+-Amanya Peter - 2024bcs033@std.must.ac.ug
+
+-Doreen miracle - 2024bcs130@std.must.ac.ug
+
+-Twinomugisha Nickson - 2024bcs168@std.must.ac.ug
+
+- Asiimwe Shabellah - 2024BCS049@std.must.ac.ug
+
+-Kangwagye Jonas - 2024BCS194@std.must.ac.ug
+
+-Maro Edly - 2024BCS097@std.must.ac.ug 
+-Nanjuki Daphine - 2024BCS129@std.must.ac.ug
+
+-Rwendeire Joshua Truth - 2024BCS148@std.must.ac.ug
+
+ -Amon Muhwezi - 2024BCS109@std.must.ac.ug
+
+-Katusiime Moreen -2024bcs084@std.must.ac.ug 
 
 ## Features
 
