@@ -1,34 +1,38 @@
 import random
+from colorama import init, Fore, Style
+
+# Initialize colorama
+init(autoreset=True)
 
 class CowHerdGame:
     def __init__(self):
         self.herds = [0, 0, 0]
         self.current_player = "Player"
         self.instructions = {
-            "start": "Enter the number of cows for each herd.",
-            "choose": "Choose a herd and enter the number of cows to remove.",
-            "end": "Your turn is over."
+            "start": "🌟 **Welcome to the Cow Herd Game!** 🌟\n\nEnter the number of cows for each herd to begin the game.",
+            "choose": "🤠 **Your Mission:** Choose a herd and remove some cows. Be strategic to outwit your opponent and be the last one to remove cows!",
+            "end": "🏁 **Your turn is over.**"
         }
 
     def start_game(self):
         # Initialize herds with player input
-        print(self.instructions["start"])
+        print(Fore.CYAN + self.instructions["start"])
         for i in range(3):
             while True:
                 try:
-                    cows = int(input(f"Enter the number of cows for Herd {i + 1}: "))
+                    cows = int(input(Fore.YELLOW + f"🐄 Enter the number of cows for Herd {i + 1}: "))
                     if cows < 0:
                         raise ValueError
                     self.herds[i] = cows
                     break
                 except ValueError:
-                    print("Please enter a valid non-negative integer for cows.")
+                    print(Fore.RED + "❌ Please enter a valid non-negative integer for cows.")
 
         if all(cow == 0 for cow in self.herds):
-            print("At least one herd must have cows to start the game.")
+            print(Fore.RED + "❌ At least one herd must have cows to start the game.")
             return
 
-        print("\nGame started!\n")
+        print(Fore.GREEN + "\n🎉 **Game started!** 🎉")
         self.show_instructions("choose")
         self.play_game()
 
@@ -40,13 +44,14 @@ class CowHerdGame:
             else:
                 self.computer_move()
 
-        print(f"\n{self.current_player} wins the game!")
+        print(Fore.MAGENTA + f"\n🏆 **{self.current_player} wins the game!** 🏆")
+        self.ask_replay()
 
     def player_move(self):
-        print("\n" + self.instructions["choose"])
+        print(Fore.BLUE + "\n" + self.instructions["choose"])
         try:
-            herd = int(input("Select a herd (1-3): ")) - 1
-            cows = int(input("Enter the number of cows to remove: "))
+            herd = int(input(Fore.YELLOW + "🔢 Select a herd (1-3): ")) - 1
+            cows = int(input(Fore.YELLOW + "🧮 Enter the number of cows to remove: "))
 
             if herd not in range(3):
                 raise ValueError("Invalid herd selection. Please choose a herd between 1 and 3.")
@@ -59,16 +64,16 @@ class CowHerdGame:
 
             # Perform the move
             self.herds[herd] -= cows
-            print(f"Player removed {cows} cow(s) from Herd {herd + 1}.")
+            print(Fore.GREEN + f"✅ You removed {cows} cow(s) from Herd {herd + 1}. 🐄")
 
             if all(h == 0 for h in self.herds):
                 return
 
             # Switch to Computer's turn
             self.current_player = "Computer"
-            print("\nComputer's turn...\n")
+            print(Fore.MAGENTA + "\n🤖 **Computer's turn...** 🤖")
         except ValueError as ve:
-            print(f"Error: {ve}")
+            print(Fore.RED + f"❌ Error: {ve}")
 
     def computer_move(self):
         if all(cows == 0 for cows in self.herds):
@@ -84,7 +89,7 @@ class CowHerdGame:
             non_empty_herds = [i for i, cows in enumerate(self.herds) if cows > 0]
             herd_index = random.choice(non_empty_herds)
             cows_to_remove = 1
-            print("Computer is in a losing position and removes 1 cow from a random herd.")
+            print(Fore.YELLOW + "🤖 The computer is in a tough spot and decides to remove 1 cow randomly.")
         else:
             # Find a herd to make the nim-sum zero after the move
             herd_index = -1
@@ -101,29 +106,45 @@ class CowHerdGame:
                 non_empty_herds = [i for i, cows in enumerate(self.herds) if cows > 0]
                 herd_index = random.choice(non_empty_herds)
                 cows_to_remove = 1
-                print("Computer could not find an optimal move and removes 1 cow from a random herd.")
+                print(Fore.YELLOW + "🤖 The computer couldn't find an optimal move and decides to remove 1 cow randomly.")
             else:
-                print(f"Computer uses strategy to remove {cows_to_remove} cow(s) from Herd {herd_index + 1}.")
+                print(Fore.YELLOW + f"🤖 The computer has strategically removed {cows_to_remove} cow(s) from Herd {herd_index + 1}.")
 
         # Perform the move
         self.herds[herd_index] -= cows_to_remove
-        print(f"Computer removed {cows_to_remove} cow(s) from Herd {herd_index + 1}.")
+        print(Fore.GREEN + f"✅ Computer removed {cows_to_remove} cow(s) from Herd {herd_index + 1}. 🐄")
 
         if all(h == 0 for h in self.herds):
             return
 
         # Switch back to Player's turn
         self.current_player = "Player"
-        print("\nPlayer's turn...\n")
+        print(Fore.BLUE + "\n🤠 **Your turn!** 🤠")
 
     def show_herd_status(self):
-        print("\nCurrent Herd Status:")
+        print(Fore.CYAN + "\n📊 **Current Herd Status:**")
         for i, herd_count in enumerate(self.herds):
-            print(f"  Herd {i + 1}: {herd_count} cow(s)")
+            cow_emoji = "🐄" * herd_count
+            print(Fore.GREEN + f"  Herd {i + 1}: {herd_count} cow(s) {cow_emoji}")
         print("")  # Add an empty line for better readability
 
     def show_instructions(self, instruction_key):
-        print(self.instructions[instruction_key])
+        print(Fore.MAGENTA + self.instructions[instruction_key])
+
+    def ask_replay(self):
+        while True:
+            replay = input(Fore.BLUE + "\n🔄 Do you want to play again? (y/n): ").strip().lower()
+            if replay == 'y':
+                print(Fore.GREEN + "\n🔁 Restarting the game...\n")
+                self.herds = [0, 0, 0]
+                self.current_player = "Player"
+                self.start_game()
+                break
+            elif replay == 'n':
+                print(Fore.MAGENTA + "\n👋 Thanks for playing the Cow Herd Showdown! Goodbye! 🐮\n")
+                break
+            else:
+                print(Fore.RED + "❌ Invalid input. Please enter 'y' for yes or 'n' for no.")
 
 if __name__ == "__main__":
     game = CowHerdGame()

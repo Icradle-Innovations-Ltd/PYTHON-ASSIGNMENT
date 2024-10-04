@@ -1,152 +1,83 @@
-README for the UI Version:
+🐄 Cow Herd Game 🐄
+Welcome to the Cow Herd Game, where you face off against the computer to strategically remove cows from herds. The last one to remove the cows wins!
 
-# Cow Herd Game (UI Version)
+This repository contains two versions of the game:
 
-This is a simple "Cow Herd" game built using Python with a graphical user interface (GUI). The objective of the game is to remove all cows from the herds before the computer does.
+Console Version: A text-based version that runs in your terminal.
+Tkinter GUI Version: A graphical version with a fun, interactive interface using Tkinter.
+Table of Contents
+About the Game
+Console Version
+How to Run
+How to Play
+Tkinter GUI Version
+How to Run
+How to Play
+Strategy
+License
+About the Game
+In the Cow Herd Game, there are 3 herds of cows. Each player takes turns removing cows from a selected herd. The objective is to make the other player remove the last cow(s).
 
-## Features:
-- Players can enter the number of cows for each herd through the UI.
-- Interactive GUI for making moves.
-- Alternates between player and computer turns.
-- Smart AI for computer moves.
+Console Version
+How to Run (Console Version)
+Clone or Download the repository.
 
-## How to Play:
-1. Enter the number of cows for each herd in the provided input boxes.
-2. Select a herd from which to remove cows by clicking the button next to that herd.
-3. The player removes cows, and the computer will automatically take its turn.
-4. The game ends when one player successfully removes all the cows from the herds. The current player is declared the winner.
+Open a terminal and navigate to the directory where the file cow_herd_game_console.py is located.
 
-## Installation:
-1. Ensure you have Python installed (3.x version recommended).
-2. Install the required library:
-pip install tkinter
+Run the script using Python:
 
-
-3. Run the game:
-python cow_herd_game_ui.py
-
-
-## Dependencies:
-- `tkinter` for the graphical user interface.
-
-README for the Console Version:
-
-# Cow Herd Game (Console Version)
-
-This is a simplified console version of the "Cow Herd" game, where players can interact with the game using the command line. The goal is to remove all cows from the herds before the computer does.
-
-## Features:
-- Input-based gameplay via the console.
-- Players take turns with the computer to remove cows from selected herds.
-- Simple AI for computer moves.
-- Console output for game progress and victory declaration.
-
-## How to Play:
-1. Start the game, and you will be prompted to enter the number of cows for each herd.
-2. Each turn, select a herd and the number of cows to remove.
-3. The computer will then remove cows from a randomly selected non-empty herd.
-4. The game ends when all herds are empty, and the current player is declared the winner.
-
-## Installation:
-1. Ensure you have Python installed (3.x version recommended).
-2. Run the game:
 python cow_herd_game_console.py
+The game will start in your terminal.
 
+How to Play (Console Version)
+You will be prompted to enter the number of cows in each of the 3 herds to start the game.
 
-# Cow Herd Game
+On your turn:
 
-This is a simple "Cow Herd" game built using Python. The game is available in two versions: a graphical user interface (GUI) version and a console version. The objective of the game is to remove all cows from the herds before the computer does.
+Select which herd you want to remove cows from.
+Enter how many cows you want to remove.
+The computer will make its move after you.
 
-## Authors
-- Group name: Bazaar
+The game continues until all cows are removed from the herds. The player forced to remove the last cow(s) loses.
 
--Amon Muhwezi - 2024BCS109@std.must.ac.ug
+Replay: After the game ends, you will be asked if you want to play again or exit.
 
--Amanya Peter - 2024bcs033@std.must.ac.ug
+Tkinter GUI Version
+How to Run (Tkinter Version)
+Clone or Download the repository.
 
--Doreen miracle - 2024bcs130@std.must.ac.ug
+Open a terminal and navigate to the directory where the file cow_herd_game_gui.py is located.
 
--Twinomugisha Nickson - 2024bcs168@std.must.ac.ug
+Run the script using Python:
 
--Asiimwe Shabellah - 2024BCS049@std.must.ac.ug
+python cow_herd_game_gui.py
+The graphical game window will appear.
 
--Kangwagye Jonas - 2024BCS194@std.must.ac.ug
+How to Play (Tkinter Version)
+Start the Game:
 
--Maro Edly - 2024BCS097@std.must.ac.ug 
+Enter the number of cows in each herd in the provided entry fields.
+Press the "Start Game" button to initialize the game.
+Your Turn:
 
--Nanjuki Daphine - 2024BCS129@std.must.ac.ug
+Select a herd using the radio buttons.
+Enter the number of cows you want to remove from the selected herd.
+Click the "Remove Cows" button to make your move.
+Computer’s Turn:
 
--Rwendeire Joshua Truth - 2024BCS148@std.must.ac.ug
+The computer will automatically make its move after yours.
+Messages will display the computer’s actions.
+The game continues until all cows are removed from the herds. The player forced to remove the last cow(s) loses.
 
--Katusiime Moreen -2024bcs084@std.must.ac.ug 
+Replay: After the game ends, click "Play Again" to reset the game and start over, or close the window to exit.
 
-## Features
+Strategy
+The Cow Herd Game is based on the concept of Nim-Sum, a game theory strategy:
 
-- Two game versions: GUI and Console
-- Players can set the number of cows for each herd
-- Interactive gameplay
-- Alternating turns between player and computer
-- Smart AI for computer moves
-
-## GUI Version
-
-### How to Play
-
-1. Enter the number of cows for each herd in the provided input boxes.
-2. Select a herd from which to remove cows by clicking the button next to that herd.
-3. The player removes cows, and the computer will automatically take its turn.
-4. The game ends when one player successfully removes all the cows from the herds. The current player is declared the winner.
-
-### Installation
-
-1. Ensure you have Python installed (3.x version recommended).
-2. Install the required library:
-   
-   pip install tkinter
-   
-3. Run the game:
-   
-   python cow_herd_game_ui.py
-   
-
-### Dependencies
-
-- `tkinter` for the graphical user interface.
-
-## Console Version
-
-### How to Play
-
-1. Start the game, and you will be prompted to enter the number of cows for each herd.
-2. Each turn, select a herd and the number of cows to remove.
-3. The computer will then remove cows from a randomly selected non-empty herd.
-4. The game ends when all herds are empty, and the current player is declared the winner.
-
-### Installation
-
-1. Ensure you have Python installed (3.x version recommended).
-2. Run the game:
-   
-   python cow_herd_game_console.py
-   
-
-## Potential Improvements
-
-1. Add difficulty levels for the computer AI.
-2. Implement a multiplayer mode for both versions.
-3. Create a web-based version of the game.
-4. Add sound effects and animations to the GUI version.
-5. Implement a leaderboard system to track high scores.
-6. Add a tutorial mode for new players.
-7. Create themed versions of the game (e.g., space cows, underwater cows).
-8. Optimize the code for better performance.
-9. Add unit tests to ensure game logic consistency.
-10. Implement save/load game functionality.
-
-## Contributing
-
-We welcome contributions to improve the Cow Herd game. Please feel free to submit pull requests or open issues for bugs and feature requests.
-
-## License
-
+If the Nim-Sum (XOR of all herd sizes) is 0, the current player is at a disadvantage.
+A winning strategy involves making the Nim-Sum 0 after your move, forcing the opponent into a losing position.
+The computer uses this strategy to make smart moves.
+License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+Happy gaming! 🐄🎉
