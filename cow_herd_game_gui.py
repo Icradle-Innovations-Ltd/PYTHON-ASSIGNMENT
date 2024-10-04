@@ -5,7 +5,7 @@ from tkinter import messagebox
 class CowHerdGameGUI:
     def __init__(self, master):
         self.master = master
-        self.master.title("🐄 Cow Herd Showdown 🐄")
+        self.master.title("🐄 Cow Herd Game 🐄")
         self.master.geometry("700x600")
         self.master.resizable(False, False)
         self.herds = [0, 0, 0]
