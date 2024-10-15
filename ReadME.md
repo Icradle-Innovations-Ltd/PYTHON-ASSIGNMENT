@@ -63,10 +63,10 @@ Your Turn:
 Select a herd using the radio buttons.
 Enter the number of cows you want to remove from the selected herd.
 Click the "Remove Cows" button to make your move.
-Computer’s Turn:
+Computer's Turn:
 
 The computer will automatically make its move after yours.
-Messages will display the computer’s actions.
+Messages will display the computer's actions.
 The game continues until all cows are removed from the herds. The player forced to remove the last cow(s) loses.
 
 Replay: After the game ends, click "Play Again" to reset the game and start over, or close the window to exit.
@@ -74,9 +74,23 @@ Replay: After the game ends, click "Play Again" to reset the game and start over
 Strategy
 The Cow Herd Game is based on the concept of Nim-Sum, a game theory strategy:
 
-If the Nim-Sum (XOR of all herd sizes) is 0, the current player is at a disadvantage.
+The Nim-Sum is calculated by performing a bitwise XOR operation on all the herd sizes.
+For example, if the herds have 3, 4, and 5 cows, the Nim-Sum would be 3 XOR 4 XOR 5 = 2.
+
+If the Nim-Sum is 0, the current player is at a disadvantage.
+This is because any move they make will result in a non-zero Nim-Sum, giving the opponent a winning position.
+
 A winning strategy involves making the Nim-Sum 0 after your move, forcing the opponent into a losing position.
-The computer uses this strategy to make smart moves.
+To do this, you need to remove cows from a herd in such a way that the XOR of the resulting herd sizes is 0.
+
+The computer uses this strategy to make smart moves:
+1. It calculates the current Nim-Sum.
+2. If the Nim-Sum is not 0, it finds a move that will make it 0.
+3. If the Nim-Sum is already 0, it makes a random move, as any move will give the advantage to the opponent.
+
+By understanding and applying the Nim-Sum strategy, you can improve your chances of winning the game.
+However, keep in mind that if both players play optimally, the player who starts with a non-zero Nim-Sum will always win.
+
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
